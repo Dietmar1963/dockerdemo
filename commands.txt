@@ -1,6 +1,5 @@
 D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>docker-compose up -d
-Starting selenium-hub ... done                                                                                                                                               Starting dockervalidation_opera_1   ... done                                                                                                                                 Starting dockervalidation_firefox_1 ... done                                                                                                                                 Starting dockervalidation_chrome_1  ... done
-D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>
+Starting selenium-hub ... done                                                                                                            Starting dockervalidation_firefox_1 ... done                                                                                              Starting dockervalidation_chrome_1  ... done                                                                                              Starting dockervalidation_opera_1   ... done                                      D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>
 D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>docker ps
 CONTAINER ID        IMAGE                          COMMAND                  CREATED              STATUS              PORTS                    NAMES
 509dcb2e46fa        selenium/node-chrome:latest    "/opt/bin/entry_poin…"   About a minute ago   Up 3 seconds                                 dockervalidation_chrome_1
@@ -11,6 +10,11 @@ D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>docker-compose scal
 WARNING: The scale command is deprecated. Use the up command with the --scale flag instead.
 Starting dockervalidation_chrome_1 ... done                                                                                               Creating dockervalidation_chrome_2 ... done                                                                                               Creating dockervalidation_chrome_3 ... done                                                                                               Creating dockervalidation_chrome_4 ... done                                                                                               Creating dockervalidation_chrome_5 ... done
 D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>
-
+D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>docker-compose up -d --scale chrome=5
+selenium-hub is up-to-date
+dockervalidation_firefox_1 is up-to-date
+Starting dockervalidation_chrome_1 ...
+Starting dockervalidation_chrome_1 ... done                                                                                               Creating dockervalidation_chrome_2 ... done                                                                                               Creating dockervalidation_chrome_3 ... done                                                                                               Creating dockervalidation_chrome_4 ... done                                                                                               Creating dockervalidation_chrome_5 ... done
+D:\OneDrive\3-Development\WorkSpaceSelenium\dockerValidation>
 
 

@@ -1,19 +1,16 @@
 package remoteTesting.dockerValidation;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 
-
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class chromeTest5 {
     @Test
-
-
     public void test1() throws MalformedURLException {
         URL u = new URL("http://localhost:4444/wd/hub");
         ChromeOptions cap = new ChromeOptions();
