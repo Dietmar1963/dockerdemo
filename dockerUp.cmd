@@ -1,1 +1,1 @@
-docker-compose -f docker\docker-compose.yaml up
+docker-compose -f docker\docker-compose.yaml up >> output.txt
