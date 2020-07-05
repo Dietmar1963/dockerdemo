@@ -24,7 +24,7 @@ public class startDocker {
         Runtime runtime = Runtime.getRuntime();
         runtime.exec("cmd /c start dockerUp.cmd");
         Thread.sleep(3000);     //wait for output.txt
-        while (System.currentTimeMillis() < stopscript) {
+        while (System.currentTimeMillis() < stopscript) {  //wait for docker to start
             if (flag) {
                 break;
             }
