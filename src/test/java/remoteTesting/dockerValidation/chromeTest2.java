@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class chromeStandAloneTest {
+public class chromeTest2 {
     public static void main (String[] args) throws MalformedURLException {
         URL u = new URL("http://localhost:4444/wd/hub");
         ChromeOptions cap = new ChromeOptions();
