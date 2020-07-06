@@ -4,13 +4,14 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class startDocker {
+public class stopDocker {
     @Test
-    public void startUp() throws IOException, InterruptedException {
+    public void shutdown() throws IOException, InterruptedException {
 
         String outputfile = "output.txt";
         boolean flag = false;
@@ -22,7 +23,7 @@ public class startDocker {
         System.out.println("current dir = " + dir);
 
         Runtime runtime = Runtime.getRuntime();
-        runtime.exec("cmd /c start dockerUp.cmd");
+        runtime.exec("cmd /c start dockerDown.cmd");
         Thread.sleep(3000);     //wait for output.txt
         while (System.currentTimeMillis() < stopscript) {  //wait for docker to start
             if (flag) {
@@ -31,8 +32,8 @@ public class startDocker {
             BufferedReader reader = new BufferedReader(new FileReader(outputfile));
             String currentLine = reader.readLine();
             while (currentLine != null && !flag) {
-                if (currentLine.contains("The node is registered to the hub")) {
-                    System.out.println("First dockernode is registred to the hub");
+                if (currentLine.contains("Shutdown complete")) {
+                    System.out.println("Docker Shutdown complete");
                     flag = true;
                     break;
                 }
@@ -41,7 +42,10 @@ public class startDocker {
             reader.close();
         }
         Assert.assertTrue(flag);
-        runtime.exec("cmd /c start dockerScaleChrome.cmd"); //create new Instances of Chrome
-        Thread.sleep(5000); //final wait 5 secs before starting to deploy the test
+        //Delete outputfile
+        File fileToDelete = new File(outputfile);
+        if (fileToDelete.delete()) {
+            System.out.println(fileToDelete + "deleted");
+        }
     }
 }
